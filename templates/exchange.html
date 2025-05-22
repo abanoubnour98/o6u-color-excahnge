@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Color Exchange</title>
+    <link rel="stylesheet" href="/static/style.css">
+    <link rel="icon" href="/static/favicon.png" type="image/x-icon">
+</head>
+<body>
+    <div class="container">
+        <img class="logo" src="/static/logo.png" alt="My Website Logo">
+        <p>Uploaded image:</p>
+
+                {% if dominant_color %}
+        <p>The dominant color is:</p>
+        <div class="color-preview" style="background-color: rgba{{ dominant_color }};"></div>
+        <p>Hex code: {{ hex_color }}</p>
+        {% endif %}
+        
+        <hr>
+        <p>Uploaded image:</p>
+
+        <form action="/" method="post" enctype="multipart/form-data">
+
+            <input type="file" name="file" accept="image/*">
+            <div class="image-preview">
+                <img id="previewImage" src="" alt="Preview Image">
+              </div>              
+            <input type="submit" value="Submit">
+        </form>
+        
+        <hr>
+        <h2>Color Exchange</h2>
+        <p>Enter a hex code to preview the color:</p>
+        <form action="/exchange" method="post">
+            <input type="text" name="hex_code" maxlength="7" minlength="7" required oninput="updateColorPreview(this.value)">
+            <div class="color-preview" id="color-preview"></div>
+            <input type="submit" value="Submit">
+        </form>
+        <script src="/static/main.js"></script>
+    </div>
+</body>
+</html>
