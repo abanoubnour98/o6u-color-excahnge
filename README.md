@@ -1,3 +1,5 @@
+![O6U Color Exchange Logo](https://raw.githubusercontent.com/abanoubnour98/o6u-color-excahnge/refs/heads/main/static/logo.png)
+
 # 🎨 O6U Color Exchange
 
 Welcome to **O6U Color Exchange** – a basic full-stack web application developed to detect and preview dominant colors from uploaded images. This project combines backend logic using **Flask** and image processing with **Pillow**, along with a smooth frontend experience using **HTML, CSS, and JavaScript**.
