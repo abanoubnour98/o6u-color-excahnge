@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Color Exchange</title>
+    <link rel="stylesheet" href="/static/style.css">
+    <link rel="icon" href="/static/favicon.png" type="image/x-icon">
+</head>
+<body>
+    <center><img class="logo" src="/static/logo.png" alt="My Website Logo"></center>
+    <div class="container">
+        <div class="color-picker">
+            <p>Enter a hex code:</p>
+            <input type="text" id="color-input" maxlength="7" minlength="7" required oninput="updateColorPreview(this.value)">
+            <div class="color-preview hidden" id="color-preview-hex"></div>
+        </div>
+        <br>
+            <p>Or you can, Upload an image to preview the dominant color:</p>
+            <form method="POST" action="/" enctype="multipart/form-data">
+                <input type="file" name="file" id="imageInput">
+                <!-- <button type="upload">Upload</button> -->
+              
+              
+                <div class="image-preview hidden">
+                    <img id="previewImage" src="" alt="Preview Image">
+                </div>
+                
+        <br>
+        <div class="color-details {% if not dominant_color %}hidden{% endif %}">
+            {% if dominant_color %}
+            <p>The dominant color is:</p>
+            <div class="color-preview" style="background-color: rgba{{ dominant_color }};"></div>
+            <p>Hex code: {{ hex_color }}</p>
+            {% endif %}
+        </div>
+        
+
+            <input type="submit" value="Submit">
+        </form>
+        
+
+    </div>
+    <br>
+    <script src="/static/main.js"></script>
+</body>
+</html>
