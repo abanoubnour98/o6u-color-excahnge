@@ -29,12 +29,6 @@ Developed by **Abanoub Abdelnour** as a showcase of web development, image manip
 
 ---
 
-## 🖥️ Screenshots (Optional)
-
-_You can add a few screenshots of the UI here to showcase the app visually._
-
----
-
 ## 📦 Installation
 
 > To run the project locally:
